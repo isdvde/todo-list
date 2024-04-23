@@ -3,9 +3,13 @@ export class XInput extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <input type="text" placeholder="Ingrese un item">
+      <input type="text" placeholder="Ingrese un item" autofocus>
     `
 
+  }
+
+  clean() {
+    this.$input.value = '';
   }
 
   get_value() {
