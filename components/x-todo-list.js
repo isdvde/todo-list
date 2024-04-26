@@ -4,58 +4,42 @@ export class XTodoList extends HTMLElement {
   constructor() {
     super();
 
-    this.innerHTML = `
-    `;
-
-    this.$checkbox_template = `
-      <td>
-        <input type="checkbox">
-      </td>
-    `;
-
-    this.$p_template = `
-    <td>
-    <p></p>
-    </td>
-    `;
-    this.button_template = `
-    <td>
-    <button>Eliminar</button>
-    </td>
-     `;
     this.todo = [];
   }
 
   create_item() {
-    return document.createElement("li");
-  }
-
-  td_wrap(el) {
-    let $td = $create("td");
-    $td.appendChild(el);
-    return $td;
+    let $div = this.create_div();
+    $div.appendChild(this.create_checkbox());
+    $div.appendChild(this.create_p());
+    $div.appendChild(this.create_button());
+    return $div;
   }
 
   create_checkbox() {
     let $checkbox = $create("input");
-    $checkbox.setAttrbute("type", "checkbox");
-    return this.td_wrap($checkbox);
+    $checkbox.setAttribute("type", "checkbox");
+    return $checkbox;
   }
 
   create_p() {
     let $p = $create('p');
-    return this.td_wrap($p);
+    $p.textContent = this.value || '';
+    return $p;
   }
 
   create_button() {
     let $button = $create('button');
     $button.textContent = 'Eliminar';
-    return this.td_wrap($button);
+    return $button;
   }
 
-  add_item(item) {
-    let $tr = $create('tr');
-    $tr.appendChild(this.create_checkbox());
+  create_div() {
+    return $create('div');
+  }
+
+  add_item(value) {
+    this.value = value;
+    this.append(this.create_item());
   }
 
   render() {
@@ -64,8 +48,8 @@ export class XTodoList extends HTMLElement {
 
   connectedCallback() {
     this.$list = this.querySelector(".todo-list");
-    this.create_checkbox();
+    // this.create_checkbox();
   }
 }
 
-customElements.define('x-todo-list', XTodoList), {extends: "table"};
+customElements.define('x-todo-list', XTodoList);

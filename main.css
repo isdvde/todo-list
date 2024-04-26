@@ -1,0 +1,19 @@
+.container {
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.todo__input {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,5 +1,6 @@
 import { XTodoList } from './components/x-todo-list';
 import { XInput } from './components/x-xinput';
+import './main.css';
 
 let $root = document.querySelector('#root');
 
