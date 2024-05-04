@@ -7,6 +7,10 @@
 	--yellow: #FFFBBD;
 }
 
+body {
+	font-family: "Montserrat", sans-serif, 'Courier New', Courier, monospace;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -58,7 +62,7 @@
 	border: 0.08rem solid #DDD;
 	border-radius: 0.3rem;
 	padding: 0.1rem;
-	font-size: 0.8em;
+	font-size: 1.2em;
 	width: 75%;
 	height: 2rem;
 }
@@ -95,8 +99,18 @@
 	color: #fff;
 }
 
-.todo__item__p {
-	font-size: 1em;
+.todo__item__li {
+	font-size: 1.5em;
 	font-weight: bold;
 	color: var(--black);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.todo__item__li::marker {
+	font-size: 1.5em;
+}
+
+.title {
+	text-align: center;
 }

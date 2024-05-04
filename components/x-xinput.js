@@ -19,7 +19,7 @@ export class XInput extends HTMLElement {
   }
 
   clean() {
-    // this.value = '';
+    this.value = '';
     this.$input.value = '';
   }
 

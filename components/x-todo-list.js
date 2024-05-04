@@ -7,9 +7,9 @@ export class XTodoList extends HTMLElement {
     this.innerHTML = ''; 
 
     this.$item_template = `
-      <p class="todo__item__p"></p>
+      <li class="todo__item__li"></li>
       <button class="btn btn-red btn-small"> X </button>
-    `
+    `;
 
     this.classList.add('todo__content');
     this.todo = [];
@@ -19,6 +19,11 @@ export class XTodoList extends HTMLElement {
     let $div = $create('div');
     $div.classList.add('todo__item');
     $div.innerHTML = this.$item_template;
+    $div.querySelector('li').textContent = this.value;
+    $div.querySelector('button').onclick = function(e) {
+      e.target.closest('.todo__item').remove();
+    }
+    return $div;
   }
 
   add_item(value) {
