@@ -4,13 +4,15 @@ import './main.css';
 
 let $root = document.querySelector('#root');
 
-let $input = document.querySelector('x-input');
-let $add_button = document.querySelector('button');
 let $todo_list = document.querySelector('x-todo-list');
+let $todo_input = document.querySelector('x-input');
 
-$add_button.onclick = function(e) {
-  let value = $input.get_value();
-  if(!value) return;
+$todo_input.$button.onclick = function(e) {
+  let value = $todo_input.value;
+  $todo_input.clean();
   $todo_list.add_item(value);
-  $input.clean();
+
+
 }
+
+$todo_list.create_item();
