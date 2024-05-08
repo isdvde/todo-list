@@ -20,7 +20,8 @@ body {
   margin: 10vh auto;
   position: relative;
   min-height: 80vh;
-  width: 50rem;
+  width: 80vw;
+	/* outline: 1px solid red; */
 }
 
 .todo {
@@ -33,20 +34,24 @@ body {
 	border: 1px solid #fafafa;
 	border-radius: 1rem;
 	box-shadow: 0.25rem 0.25rem #f3f3f3;
+	/* border: 1px solid blue; */
 }
 
 .todo__form {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
 	align-items: center;
   flex-direction: row;
 	padding: 1rem;
+	/* border: 1px solid green; */
+	gap: 1rem;
 }
 
 .todo__content {
 	padding: 1rem;
-	width: 100%;
+	width: 90%;
+	/* border: 1px solid green; */
 }
 
 .todo__item {
@@ -56,6 +61,7 @@ body {
 	align-items: center;
 	position: relative;
 	gap: 1rem;
+	/* border: 1px solid red; */
 }
 
 .input {
